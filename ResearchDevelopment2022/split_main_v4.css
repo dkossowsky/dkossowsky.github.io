@@ -1,0 +1,163 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#controls{
+  margin: 10px;
+    width:100%;
+    height:25px;
+}
+
+#maps{
+
+    height:90%;
+    float: left;
+
+}
+
+.fullLengthContainers {
+            width: 100%;
+            height: 50%;
+          }
+
+#row1 {
+  padding-top: 0px;
+}
+
+.headerText {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4em;
+  color: white;
+}
+
+.graphText {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+  color: #cdcdd4;
+}
+
+.box{
+  box-sizing: border-box;
+  /* border-top: 5px solid transparent; */
+  /* border-bottom: 5px solid transparent; */
+
+  /* The code below is for the chart inner rounded borders. https://stackoverflow.com/questions/20382037/css-border-radius-and-solid-border-curved-inside */
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  border:#222437 solid 5px;
+  /* border-left: 0px solid transparent;
+  border-right: 0px solid transparent; */
+  background-clip:padding-box;
+  width: 100%;
+  float: left;
+  height: 100%;
+  background-color: red;
+  padding-top: 10px;
+  border-radius: 10px;
+  /* margin-left: 20px; */
+}
+
+.test123 {
+padding-left: 20px !important;
+}
+
+#view1Div, #view2Div, #viewChart {
+       margin: 0px;
+       height: 98%;
+       width: 100%;
+     }
+
+#viewChartFullWidth {
+      margin-top: 5px;
+      height: 100%;
+      width: 100%;
+
+    }
+
+#maps1 {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 10px;
+  height: 450px; /** DK edit **/
+}
+#topBar{
+  padding: 15px;
+}
+
+#info{
+  height:25px;
+  float:left;
+  width:100%;
+  margin-left:15px;
+}
+
+
+
+.mapContainer{
+  height: 98%;
+  float:left;
+  width: 100%;
+}
+
+#stats{
+    float:left;
+    position: relative;
+    margin: auto;
+    height: 95%;
+    margin-top: 10px;
+}
+
+.form-control.form-control-med{
+  width:184px !important;
+  float: left;
+  margin-right: 20px;
+  margin-left: 10px;
+  margin-top:-5px;
+}
+.esri-legend__layer-caption{
+    display:none !important;
+}
+
+
+img{
+  float: right;
+  margin: 0 15px;
+  height: 40px;
+}
+
+
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+.navbar-custom {
+  background-color: #222437;
+            }
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: white;
+}
+
+.navbar-custom a{
+  color: #c7c7c7;
+}
+
+.navbar-custom a:hover {
+  color: #c7c7c7;
+  text-decoration: underline;
+}

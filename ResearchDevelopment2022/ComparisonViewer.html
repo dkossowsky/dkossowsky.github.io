@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no"> <!-- DK 110322: added width=device-width -->
+    <title>Comparison Viewer</title>
+
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="split_main_v4.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.12/esri/css/main.css">
+    <!-- <link rel="stylesheet" href="esri-main.css"> -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="https://js.arcgis.com/4.12/"></script>
+    <script src="split_main_v6.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+
+   <!--Include Web Project Style File (If any)-->
+   <link href="http://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+
+<!--Include JQuery Style File-->
+<link href="~/Styles/css/sunny/jquery-ui-1.8.22.custom.css" rel="stylesheet" type="text/css" />
+
+<!--Include JQuery File-->
+<script type="text/javascript" language="Javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<!--Include JQuery UI File-->
+<script type="text/javascript" language="Javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#dialog").dialog({
+autoOpen: false,
+  height: 600,
+	width: 800,
+	modal: true,
+    resizable: false,
+	dialogClass: 'no-close success-dialog'
+});
+
+        $("#hlOpenMe").click(
+            function () {
+                $("#dialog").dialog('open');
+                return false;
+            }
+        );
+    });
+</script>
+
+  </head>
+
+  <body style="background-color: #222437;">
+
+<!-- <div class="col-md-12">
+  <div class="headerText row" style="height: 51px; background-color: #222437;">
+    <div class="col-md-8">
+    Wynford Drive Development Viewer
+    </div>
+  </div>
+</div> -->
+
+<div class="col-md-12" id="maps">
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="navbar-brand">Wynford Drive Development Viewer</div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#"><u>Compare</u> <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="ExploreViewer.html">Explore</a>
+        <a class="nav-item nav-link" id="hlOpenMe" runat="server" href="#">Information</a>
+      </div>
+    </div>
+  </nav>
+
+  <div id="dialog" title="Project Information - Research and Development Project, 2022">
+      <p>This website acts as a scenario comparison viewer for redevelopment projects that are currently proposed in the area of Wynford Drive and Concorde Place, in Toronto, Canada. <br> 3D scenarios scenes were created using <a href="http://www.esri.ca" target="_blank" style="color: #2358ad;">Esri</a> technologies, and charts were generated using <a href="https://www.chartjs.org/" target="_blank" style="color: #2358ad;">Chart.js</a>.</p>
+      <img id="img1" src="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML/basic-image.png" alt="Dinosaur" />
+      <p>This project was created as part of a Research and Development project within Esri Canada's Education and Research department. All information shown here was derived from publicly available data about each development proposal. Due to ongoing development updates in the area, the data displayed here should not be taken as authoritative information, and should only be used for as an example of integrating Esri technologies for scenario comparison purposes.</p>
+
+      <p>Data was obtained from the following sources:
+        <ul>
+          <li><a href="https://open.toronto.ca/" target="_blank" style="color: #2358ad;">City of Toronto Open Data</a></li>
+          <li><a href="http://app.toronto.ca/AIC/index.do?folderRsn=7munpT1LqPs5f5oBqR28fQ%3D%3D" target="_blank" style="color: #2358ad;">Toronto Development Applcation Information Centre</a></li>
+          <li><a href="https://jus-olt-prod.powerappsportals.com/en/e-status/details/?id=200beb3d-1d89-ec11-93b0-0022483c59e3" target="_blank" style="color: #2358ad;">Ontario Land Tribunal</a></li>
+          <li><a href="http://app.toronto.ca/AIC/index.do?folderRsn=7munpT1LqPs5f5oBqR28fQ%3D%3D" target="_blank" style="color: #2358ad;">1 Concorde Gate Transportation Impact Study</a></li>
+          <li><a href="https://environicsanalytics.com/en-ca" target="_blank" style="color: #2358ad;">Environics Analytics (GeoEnrichment)</a></li>
+          <li><a href="http://www.esri.ca" target="_blank" style="color: #2358ad;">Esri Canada</a></li>
+        </ul>
+      </p>
+      <p>Technologies used in this website are:
+        <ul>
+          <li><a href="https://www.esri.com/en-us/arcgis/products/arcgis-cityengine/overview" target="_blank" style="color: #2358ad;">Esri ArcGIS CityEngine</a></li>
+          <li><a href="http://www.arcgis.com" target="_blank" style="color: #2358ad;">Esri ArcGIS Online</a></li>
+          <li><a href="https://www.esri.com/en-us/arcgis/products/arcgis-experience-builder/overview" target="_blank" style="color: #2358ad;">Esri Experience Builder</a></li>
+          <li><a href="https://getbootstrap.com/" target="_blank" style="color: #2358ad;">Bootstrap</a></li>
+          <li><a href="https://www.chartjs.org/" target="_blank" style="color: #2358ad;">Chart.js</a></li>
+        </ul>
+      </p>
+      <p>For more information, contact <a href="https://hed.esri.ca/" target="_blank" style="color: #2358ad;">Esri Canada's Education and Research Group.</a></p>
+      <p><h6>Research project created by <a href="mailto:dkossowsky@esri.ca" style="color: #2358ad;">David Kossowsky</a> and <a href="mailto:kmunn@esri.ca" style="color: #2358ad;">Kendra Munn</a>.</h6><br><br><em>Special thanks to Michael Luubert for assistance with the Javascript viewer and CityEngine roads data.</em></p>
+  </div>
+
+  <div class="fullLengthContainers container-fluid" style="background-color: #222437">
+    <!-- <div class="ro1w"  style="background-color: red; height: 450px;">  DK edit -->
+      <!-- <div class="col-md-6" style="background-color: green;"> -->
+        <!-- <div id="view1Div" style="height:100%; background-color: #222437"> -->
+        <div id="view1Div" style="float: left; background-color: #222437;">
+          <div class="form-group" style="position:absolute; top: 49%; left:1.6%; width: 150px; color: blue; height: 60px">
+            <select id="select_scenario_1" class = "form-control form-control-med" style="border-radius:1px;">
+                <option value="2020-P" selected="selected">As Built Conditions</option>
+                <option value="2030-D">Developer Proposal</option>
+                <option value="e1_2030_d1">Alternate Design</option>
+            </select>
+          </div>
+        </div>
+      <!-- </div> -->
+      <!-- <div class="col-md-6" style="height: 100%; background-color: blue; height: 100%;"> -->
+        <!-- <div id="view2Div" style="height:100%; background-color: #222437"> -->
+        <div id="view2Div" style="float: left; background-color: #222437">
+          <div class="form-group" style="position:absolute; top: 49%; left:50.2%; width: 150px; color: blue; height: 60px">
+            <select id="select_scenario_2" class = "form-control form-control-med" style="border-radius:1px;">
+                <option value="2020-P">As Built Conditions</option>
+                <option value="2030-D" selected="selected">Developer Proposal</option>
+                <option value="e1_2030_d1">Alternate Design</option>
+            </select>
+          </div>
+        </div>
+  </div>
+
+
+      <!-- </div> -->
+    <!-- </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="fullLengthContainers container-fluid" style="background-color: #222437;">
+<div id="viewChartFullWidth">
+    <!-- <div class="row" style="background-color: pink;"> -->
+
+      <div class="col-md-3 box" style="background-color: #222437; ">
+        <!-- <div style="position:relative; left: 0.8%;"> -->
+
+          <div class="graphText">
+            Residential Population<br><br>
+          </div>
+          <!-- <div class="chart-container" style="position: relative; height:37vh; width:14.1vw"> -->
+          <div class="chart-container" style="position: relative; height:37vh; width:20vw">
+            <canvas id ="ResPopulation" ></canvas>
+          </div>
+        <!-- </div> -->
+      </div>
+
+      <div class="col-md-5 box" style="background-color: #222437; ">
+        <!-- <div style="position:absolute; left: 0.8%;"> -->
+          <div class="graphText">
+            Space Use <sub> % composition</sub><br><br>
+          </div>
+          <!-- <div class="chart-container" style="position: relative; height:20vh; width:16vw; margin-left: 0px; float: left;"> -->
+          <div class="chart-container" style="position: relative; height:30vh; width:16vw; margin-left: 0px; float: left;">
+            <canvas id ="SpaceUse"></canvas>
+          </div>
+          <!-- <div class="chart-container" style="position: relative; height:20vh; width:16vw; margin-left: 20px; float: left;"> -->
+          <div class="chart-container" style="position: relative; height:30vh; width:16vw; margin-left: 10px; float: left;">
+            <canvas id ="SpaceUse1"></canvas>
+          </div>
+          <div id="middleLegend" style="position: absolute; width: 100%; text-align: center;">
+            <div id="middleLegendText1" style="display: flex; justify-content: center; font: 12px Arial, sans-serif; color:#898995;">
+              <div><div class='box1 childcare' style="background-color: rgb(249,158,67);"></div> Childcare</div>
+              <div><div class='box1 community' style="background-color: rgb(192,174,213);"></div> Community</div>
+              <div><div class='box1 greenspace' style="background-color: rgb(164,206,75);"></div> Greenspace</div>
+              <div><div class='box1 library' style="background-color: rgb(126,105,174);"></div> Library</div>
+              <div><div class='box1 mechanical' style="background-color: rgb(201,203,207);"></div> Mechanical</div>
+            </div>
+            <div id="middleLegendText2" style="display: flex; justify-content: center; font: 12px Arial, sans-serif; color:#898995;">
+
+              <div><div class='box1 office' style="background-color: rgb(70,159,216);"></div> Office</div>
+              <div><div class='box1 residential' style="background-color: rgb(255,205,87);"></div> Residential</div>
+              <div><div class='box1 retail' style="background-color: rgb(241,98,132);"></div> Retail</div>
+              <div><div class='box1 school' style="background-color: rgb(76,192,192);"></div> School</div>
+              <div><div class='box1 services' style="background-color: rgb(191,59,96);"></div> Services</div>
+            </div>
+          </div>
+        <!-- </div> -->
+      </div>
+
+      <!-- <div class="col-md-5 box" style="background-color: #454a69;"> -->
+        <div class="col-md-4 box" style="background-color: #222437;">
+        <div style="position:relative; left: 0.8%;">
+          <div class="graphText">
+            Vehicle Trips <sub> Average number of trips per day</sub><br><br>
+          </div>
+          <!-- <div class="chart-container" style="position: relative; height:37vh; width:31vw"> -->
+          <div class="chart-container" style="position: relative; height:37vh; width:28vw">
+            <canvas id="VehicleTrips"></canvas>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- <div class="col-md-3 box" style="background-color: #454a69; ">
+          <div class="graphText">
+            Space Use<br><br>
+          </div>
+          <div class="chart-container" style="position: relative; height:37vh; width:20.8vw">
+            <canvas id ="SpaceUse1" ></canvas>
+          </div>
+      </div> -->
+
+
+
+    <!-- </div> -->
+  </div>
+  </div>
+</div>
+<style>
+
+#view1Div, #view2Div {
+            width: 50%;
+            height: 100%;
+            padding-bottom: 5px;
+            border-radius: 0px;
+          }
+
+#view1Div {
+          padding-right: 5px;
+        }
+
+#view2Div {
+          padding-left: 5px;
+        }
+
+#viewChartFullWidth {
+      height: 100%;
+      width: 100%;
+
+    }
+
+.box1 {
+  float: left;
+  height: 13px;
+  width: 13px;
+  margin-right: 5px;
+  margin-left: 11px;
+  margin-bottom: 15px;
+  border: 0px solid black;
+  clear: both;
+}
+
+    .esri-attribution{
+        border-radius: 0 0 10px 10px;
+      }
+
+      .esri-view .esri-view-surface{
+          border-radius: 10px; /* DK edit */
+        }
+
+@media screen and (max-width: 2000px) {
+   #middleLegend {
+      /* margin-top: 242px; */
+      margin-top: 270px;
+      padding-right: 150px;
+   }
+}
+@media screen and (min-width: 2001px) {
+   #middleLegend {
+      margin-top: 402px;
+      padding-right: 200px;
+   }
+}
+
+.ui-widget.success-dialog {
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 0.9em;
+
+}
+
+.ui-widget-content.success-dialog {
+    background: #dbdbdb;
+    border: 2px solid #222437;
+    color: #222222;
+
+
+}
+
+.ui-dialog-titlebar {
+  font-size: 1.2em !important;
+}
+
+.ui-dialog.success-dialog {
+    left: 0;
+    outline: 0 none;
+    padding: 100 !important;
+    position: absolute;
+    top: 0;
+}
+
+.ui-dialog.success-dialog .ui-dialog-content {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    overflow: auto;
+    position: relative;
+    padding: 100 !important;
+    margin: 0;
+}
+
+.ui-dialog.success-dialog .ui-widget-header {
+    background: #adadad;
+    border: 0;
+    color: #222437;
+    font-weight: normal;
+}
+
+.ui-dialog.success-dialog .ui-dialog-titlebar {
+    padding: .5em .5em;
+    position: relative;
+    font-size: 1em;
+}
+
+#img1 {
+  height: 500px !important;
+  float: inherit;
+}
+
+</style>
+<script>
+//Switch layers
+var scenario_id = document.getElementById("select_scenario");
+var switch_layer;
+
+function infoFunction() {
+  alert("I am an alert box!");
+}
+</script>
+
+  </body>
+</html>

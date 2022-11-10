@@ -1,0 +1,127 @@
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"> -->
+    <title>Explore Viewer</title>
+
+    <style>
+
+    </style>
+    <link rel="stylesheet" href="split_main_v4.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.12/esri/css/main.css">
+    <!-- <link rel="stylesheet" href="esri-main.css"> -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="https://js.arcgis.com/4.12/"></script>
+    <script src="split_main_v2_explore.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  </head>
+
+  <body style="background-color: #222437;">
+
+
+    <div class="col-md-12" id="maps">
+      <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="navbar-brand">Wynford Drive Development Viewer</div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="ComparisonViewer.html">Compare </a>
+            <a class="nav-item nav-link" href="#"><u>Explore</u> <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#" onclick="infoFunction()">Information</a>
+          </div>
+        </div>
+      </nav>
+
+
+
+
+      <div id="test" alignment>
+    <iframe width="100%" height="90%" frameborder="0" src="https://experience.arcgis.com/experience/355dbac12aa24f28a430761c16b8595f" title="description"></iframe>
+    </div>
+    </div>
+
+
+
+
+
+
+  <!-- <div id="test" alignment>
+<iframe width="100%" height="90%" frameborder="0" src="https://experience.arcgis.com/experience/355dbac12aa24f28a430761c16b8595f" title="description"></iframe>
+</div>
+</div>
+</body>
+</html> -->
+
+<style>
+#test {
+    margin: auto;
+    width: 90%;
+    padding: 0px;
+}
+
+#view1Div, #view2Div {
+            width: 50%;
+            height: 100%;
+            padding-bottom: 5px;
+            border-radius: 0px;
+          }
+
+#view1Div {
+          padding-right: 5px;
+        }
+
+#view2Div {
+          padding-left: 5px;
+        }
+
+#viewChartFullWidth {
+      height: 100%;
+      width: 100%;
+
+    }
+
+.box1 {
+  float: left;
+  height: 13px;
+  width: 13px;
+  margin-right: 5px;
+  margin-left: 11px;
+  margin-bottom: 15px;
+  border: 0px solid black;
+  clear: both;
+}
+
+    .esri-attribution{
+        border-radius: 0 0 10px 10px;
+      }
+
+      .esri-view .esri-view-surface{
+          border-radius: 10px; /* DK edit */
+        }
+
+@media screen and (max-width: 2000px) {
+   #middleLegend {
+      /* margin-top: 242px; */
+      margin-top: 270px;
+   }
+}
+@media screen and (min-width: 2001px) {
+   #middleLegend {
+      margin-top: 352px;
+   }
+}
+</style>
+
+<script>
+function infoFunction() {
+  alert("I am an alert box!");
+}
+</script>
+</body>
+</html>
