@@ -18,6 +18,38 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+    <!--Include Web Project Style File (If any)-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+
+ <!--Include JQuery Style File-->
+ <link href="~/Styles/css/sunny/jquery-ui-1.8.22.custom.css" rel="stylesheet" type="text/css" />
+
+ <!--Include JQuery File-->
+ <script type="text/javascript" language="Javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+ <!--Include JQuery UI File-->
+ <script type="text/javascript" language="Javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.min.js"></script>
+ <script type="text/javascript">
+     $(document).ready(function () {
+         $("#dialog").dialog({
+ autoOpen: false,
+   height: 600,
+ 	width: 800,
+ 	modal: true,
+     resizable: false,
+ 	dialogClass: 'no-close success-dialog'
+ });
+
+         $("#hlOpenMe").click(
+             function () {
+                 $("#dialog").dialog('open');
+                 return false;
+             }
+         );
+     });
+ </script>
+
   </head>
 
   <body style="background-color: #222437;">
