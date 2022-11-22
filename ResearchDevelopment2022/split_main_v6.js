@@ -342,10 +342,10 @@ var myChartPop;
 var myChartVehicle;
 var arrayDK = [[1,1],[1,1],[1,1],[1,1]];
 //DK - I created an array below with the values needed for the charts. Then I reference them in the javascript below.
-var resArray = [[508,16198],[242,7714],[642,60],[1295,3547]];
-var spaceArrayCurr = [700,0,0,0,969,409899,0,4000,0,0];
+var resArray = [[508,16198],[242,7714],[2041,60],[1335,3547]];
+var spaceArrayCurr = [120,0,0,0,969,37638,0,1393,0,0];
 var spaceArrayProp = [0,437,8433,0,2995,0,437075,2632,0,0];
-var vehicleArray = [[1583,2679],[1458,2957],[72,446],[44,493],[20,64],[42,71]];
+var vehicleArray = [[1583,2249],[1458,2254],[72,375],[44,376],[20,54],[42,54]];
 
 //var leftSelect = document.getElementById("select_scenario_1");
 //var selectedTextL = leftSelect.options[leftSelect.selectedIndex].text;
@@ -367,16 +367,16 @@ on(dom.byId("select_scenario_1"), "change", lang.hitch(this, function(evt){
 
   if (evt.currentTarget.value == "2020-P"){ //As Built Conditions
     //updateGraph(myChartSpace1,[[190,920,530,440]]); I don't need to update this one on this end
-    updateGraph(myChartSpace,[[700,0,0,0,969,409899,0,4000,0,0]]);
-    updateGraph(myChartPop,[[(resArray[0][0],508),(resArray[0][1])],[(resArray[1][0],242),(resArray[1][1])],[(resArray[2][0],642),(resArray[2][1])],[(resArray[3][0],1295),(resArray[3][1])]]);
+    updateGraph(myChartSpace,[[120,0,0,0,969,37638,0,1393,0,0]]);
+    updateGraph(myChartPop,[[(resArray[0][0],508),(resArray[0][1])],[(resArray[1][0],242),(resArray[1][1])],[(resArray[2][0],2041),(resArray[2][1])],[(resArray[3][0],1335),(resArray[3][1])]]);
     updateGraph(myChartVehicle,[[(vehicleArray[0][0],1583),(vehicleArray[0][1])],[(vehicleArray[1][0],1458),(vehicleArray[1][1])],[(vehicleArray[2][0],72),(vehicleArray[2][1])],[(vehicleArray[3][0],44),(vehicleArray[3][1])],[(vehicleArray[4][0],20),(vehicleArray[4][1])],[(vehicleArray[5][0],42),(vehicleArray[5][1])]]); //Left side: Bike AM = 99, PM = 199, Car AM = 299, PM = 399, Bike AM - 499, PM = 599
     updateText(myChartPop,"As Built");
     updateText(myChartSpace, "As Built");
     updateText(myChartVehicle, "As Built");
     resArray[0][0] = 508; //change this as well as the value above (the one above sets the value temporarily. This replaces the value in the array.
     resArray[1][0] = 242;
-    resArray[2][0] = 642;
-    resArray[3][0] = 1295;
+    resArray[2][0] = 2041;
+    resArray[3][0] = 1335;
     // spaceArrayCurr = [1301,2360,3210,40]
     vehicleArray[0][0] = 1583;
     vehicleArray[1][0] = 1458;
@@ -393,7 +393,7 @@ on(dom.byId("select_scenario_1"), "change", lang.hitch(this, function(evt){
     updateGraph(myChartSpace,[[0,437,8433,0,2995,0,437075,2632,0,0]]);
     //updateGraph(myChartPop,[[(resArray[0],8),(resArray[1])]]); //99 is the new population value (left side)
     updateGraph(myChartPop,[[(resArray[0][0],16198),(resArray[0][1])],[(resArray[1][0],7714),(resArray[1][1])],[(resArray[2][0],60),(resArray[2][1])],[(resArray[3][0],3547),(resArray[3][1])]]);
-    updateGraph(myChartVehicle,[[(vehicleArray[0][0],2679),(vehicleArray[0][1])],[(vehicleArray[1][0],2957),(vehicleArray[1][1])],[(vehicleArray[2][0],446),(vehicleArray[2][1])],[(vehicleArray[3][0],493),(vehicleArray[3][1])],[(vehicleArray[4][0],64),(vehicleArray[4][1])],[(vehicleArray[5][0],71),(vehicleArray[5][1])]]); //Left side: Bike AM = 99, PM = 199, Car AM = 299, PM = 399, Bike AM - 499, PM = 599
+    updateGraph(myChartVehicle,[[(vehicleArray[0][0],2249),(vehicleArray[0][1])],[(vehicleArray[1][0],2254),(vehicleArray[1][1])],[(vehicleArray[2][0],375),(vehicleArray[2][1])],[(vehicleArray[3][0],376),(vehicleArray[3][1])],[(vehicleArray[4][0],54),(vehicleArray[4][1])],[(vehicleArray[5][0],54),(vehicleArray[5][1])]]); //Left side: Bike AM = 99, PM = 199, Car AM = 299, PM = 399, Bike AM - 499, PM = 599
     updateText(myChartPop,"Developer");
     updateText(myChartSpace, "Developer");
     updateText(myChartVehicle, "Developer");
@@ -402,34 +402,34 @@ on(dom.byId("select_scenario_1"), "change", lang.hitch(this, function(evt){
     resArray[2][0] = 60;
     resArray[3][0] = 3547;
     // spaceArrayCurr = [101,260,310,40]
-    vehicleArray[0][0] = 2679; // bike AM
-    vehicleArray[1][0] = 2957; // bike PM
-    vehicleArray[2][0] = 446; //car AM
-    vehicleArray[3][0] = 493; // car PM
-    vehicleArray[4][0] = 64; // bus AM
-    vehicleArray[5][0] = 71; // bus PM
+    vehicleArray[0][0] = 2249; // bike AM
+    vehicleArray[1][0] = 2254; // bike PM
+    vehicleArray[2][0] = 375; //car AM
+    vehicleArray[3][0] = 376; // car PM
+    vehicleArray[4][0] = 54; // bus AM
+    vehicleArray[5][0] = 54; // bus PM
 
 
   }
   else if (evt.currentTarget.value == "e1_2030_d1"){ //Alternate Design
     //updateGraph(myChartSpace1,[[190,920,530,440]]); I don't need to update this one on this end
     updateGraph(myChartSpace,[[1821,7388,13942,3367,2721,66975,171885,15982,3642,11495]]);
-    updateGraph(myChartPop,[[(resArray[0][0],3084),(resArray[0][1])],[(resArray[1][0],1395),(resArray[1][1])],[(resArray[2][0],2942),(resArray[2][1])],[(resArray[3][0],4088),(resArray[3][1])]]);
-    updateGraph(myChartVehicle,[[(vehicleArray[0][0],1548),(vehicleArray[0][1])],[(vehicleArray[1][0],1452),(vehicleArray[1][1])],[(vehicleArray[2][0],258),(vehicleArray[2][1])],[(vehicleArray[3][0],242),(vehicleArray[3][1])],[(vehicleArray[4][0],37),(vehicleArray[4][1])],[(vehicleArray[5][0],34),(vehicleArray[5][1])]]); //Left side: Bike AM = 99, PM = 199, Car AM = 299, PM = 399, Bike AM - 499, PM = 599
-    updateText(myChartPop,"Alternate");
-    updateText(myChartSpace, "Alternate");
-    updateText(myChartVehicle, "Alternate");
-    resArray[0][0] = 3084; //change this as well as the value above (the one above sets the value temporarily. This replaces the value in the array.
-    resArray[1][0] = 1395;
+    updateGraph(myChartPop,[[(resArray[0][0],4183),(resArray[0][1])],[(resArray[1][0],1865),(resArray[1][1])],[(resArray[2][0],2942),(resArray[2][1])],[(resArray[3][0],3846),(resArray[3][1])]]);
+    updateGraph(myChartVehicle,[[(vehicleArray[0][0],2159),(vehicleArray[0][1])],[(vehicleArray[1][0],1888),(vehicleArray[1][1])],[(vehicleArray[2][0],360),(vehicleArray[2][1])],[(vehicleArray[3][0],315),(vehicleArray[3][1])],[(vehicleArray[4][0],51),(vehicleArray[4][1])],[(vehicleArray[5][0],45),(vehicleArray[5][1])]]); //Left side: Bike AM = 99, PM = 199, Car AM = 299, PM = 399, Bike AM - 499, PM = 599
+    updateText(myChartPop,"Alternative");
+    updateText(myChartSpace, "Alternative");
+    updateText(myChartVehicle, "Alternative");
+    resArray[0][0] = 4183; //change this as well as the value above (the one above sets the value temporarily. This replaces the value in the array.
+    resArray[1][0] = 1865;
     resArray[2][0] = 2942;
-    resArray[3][0] = 4088;
+    resArray[3][0] = 3846;
     // spaceArrayCurr = [11,60,10,340]
-    vehicleArray[0][0] = 1548;
-    vehicleArray[1][0] = 1452;
-    vehicleArray[2][0] = 258;
-    vehicleArray[3][0] = 242;
-    vehicleArray[4][0] = 37;
-    vehicleArray[5][0] = 34;
+    vehicleArray[0][0] = 2159;
+    vehicleArray[1][0] = 1888;
+    vehicleArray[2][0] = 360;
+    vehicleArray[3][0] = 315;
+    vehicleArray[4][0] = 51;
+    vehicleArray[5][0] = 45;
 
   }
   else {
@@ -472,16 +472,16 @@ on(dom.byId("select_scenario_2"), "change", lang.hitch(this, function(evt){
 
   if (evt.currentTarget.value == "2020-P"){ //As Built Conditions
     //updateGraph(myChartSpace1,[[190,920,530,440]]); I don't need to update this one on this end
-    updateGraph(myChartSpace1,[[700,0,0,0,969,409899,0,4000,0,0]]);
-    updateGraph(myChartPop,[[(resArray[0][0]),(resArray[0][1],508)],[(resArray[1][0]),(resArray[1][1],242)],[(resArray[2][0]),(resArray[2][1],642)],[(resArray[3][0]),(resArray[3][1],1295)]]);
+    updateGraph(myChartSpace1,[[120,0,0,0,969,37638,0,1393,0,0]]);
+    updateGraph(myChartPop,[[(resArray[0][0]),(resArray[0][1],508)],[(resArray[1][0]),(resArray[1][1],242)],[(resArray[2][0]),(resArray[2][1],2041)],[(resArray[3][0]),(resArray[3][1],1335)]]);
     updateGraph(myChartVehicle,[[(vehicleArray[0][0]),(vehicleArray[0][1],1583)],[(vehicleArray[1][0]),(vehicleArray[1][1],1458)],[(vehicleArray[2][0]),(vehicleArray[2][1],72)],[(vehicleArray[3][0]),(vehicleArray[3][1],44)],[(vehicleArray[4][0]),(vehicleArray[4][1],20)],[(vehicleArray[5][0]),(vehicleArray[5][1],42)]]); //Left side: Bike AM = 99, PM = 199, Car AM = 299, PM = 399, Bike AM - 499, PM = 599
     updateText1(myChartPop,"As Built");
     updateText1(myChartSpace1, "As Built");
     updateText1(myChartVehicle, "As Built");
     resArray[0][1] = 508; //change this as well as the value above (the one above sets the value temporarily. This replaces the value in the array.
     resArray[1][1] = 242;
-    resArray[2][1] = 642;
-    resArray[3][1] = 1295;
+    resArray[2][1] = 2041;
+    resArray[3][1] = 1335;
     // spaceArrayCurr1 = [901,60,3210,4]
 
     vehicleArray[0][1] = 1583;
@@ -495,7 +495,7 @@ on(dom.byId("select_scenario_2"), "change", lang.hitch(this, function(evt){
     //updateGraph(myChartSpace1,[[190,920,530,440]]); I don't need to update this one on this end
     updateGraph(myChartSpace1,[[0,437,8433,0,2995,0,437075,2632,0,0]]);
     updateGraph(myChartPop,[[(resArray[0][0]),(resArray[0][1],16198)],[(resArray[1][0]),(resArray[1][1],7714)],[(resArray[2][0]),(resArray[2][1],60)],[(resArray[3][0]),(resArray[3][1],3547)]]);
-    updateGraph(myChartVehicle,[[(vehicleArray[0][0]),(vehicleArray[0][1],2679)],[(vehicleArray[1][0]),(vehicleArray[1][1],2957)],[(vehicleArray[2][0]),(vehicleArray[2][1],446)],[(vehicleArray[3][0]),(vehicleArray[3][1],493)],[(vehicleArray[4][0]),(vehicleArray[4][1],64)],[(vehicleArray[5][0]),(vehicleArray[5][1],71)]]); //Left side: Bike AM = 99, PM = 199, Car AM = 299, PM = 399, Bike AM - 499, PM = 599
+    updateGraph(myChartVehicle,[[(vehicleArray[0][0]),(vehicleArray[0][1],2249)],[(vehicleArray[1][0]),(vehicleArray[1][1],2254)],[(vehicleArray[2][0]),(vehicleArray[2][1],375)],[(vehicleArray[3][0]),(vehicleArray[3][1],376)],[(vehicleArray[4][0]),(vehicleArray[4][1],54)],[(vehicleArray[5][0]),(vehicleArray[5][1],54)]]); //Left side: Bike AM = 99, PM = 199, Car AM = 299, PM = 399, Bike AM - 499, PM = 599
     updateText1(myChartPop,"Developer");
     updateText1(myChartSpace1, "Developer");
     updateText1(myChartVehicle, "Developer");
@@ -504,32 +504,32 @@ on(dom.byId("select_scenario_2"), "change", lang.hitch(this, function(evt){
     resArray[2][1] = 60;
     resArray[3][1] = 3547;
     // spaceArrayCurr1 = [11,260,10,10]
-    vehicleArray[0][1] = 2679;
-    vehicleArray[1][1] = 2957;
-    vehicleArray[2][1] = 446;
-    vehicleArray[3][1] = 493;
-    vehicleArray[4][1] = 64;
-    vehicleArray[5][1] = 71;
+    vehicleArray[0][1] = 2249;
+    vehicleArray[1][1] = 2254;
+    vehicleArray[2][1] = 375;
+    vehicleArray[3][1] = 376;
+    vehicleArray[4][1] = 54;
+    vehicleArray[5][1] = 54;
   }
   else if (evt.currentTarget.value == "e1_2030_d1"){ //Alternate Design
     //updateGraph(myChartSpace1,[[190,920,530,440]]); I don't need to update this one on this end
     updateGraph(myChartSpace1,[[1821,7388,13942,3367,2721,66975,171882,15982,3642,11495]]);
-    updateGraph(myChartPop,[[(resArray[0][0]),(resArray[0][1],3084)],[(resArray[1][0]),(resArray[1][1],1395)],[(resArray[2][0]),(resArray[2][1],2942)],[(resArray[3][0]),(resArray[3][1],4088)]]);
-    updateGraph(myChartVehicle,[[(vehicleArray[0][0]),(vehicleArray[0][1],1548)],[(vehicleArray[1][0]),(vehicleArray[1][1],1452)],[(vehicleArray[2][0]),(vehicleArray[2][1],258)],[(vehicleArray[3][0]),(vehicleArray[3][1],242)],[(vehicleArray[4][0]),(vehicleArray[4][1],37)],[(vehicleArray[5][0]),(vehicleArray[5][1],34)]]); //Left side: Bike AM = 99, PM = 199, Car AM = 299, PM = 399, Bike AM - 499, PM = 599
-    updateText1(myChartPop,"Alternate");
-    updateText1(myChartSpace1, "Alternate");
-    updateText1(myChartVehicle, "Alternate");
-    resArray[0][1] = 3084; //change this as well as the value above (the one above sets the value temporarily. This replaces the value in the array.
-    resArray[1][1] = 1395;
+    updateGraph(myChartPop,[[(resArray[0][0]),(resArray[0][1],4183)],[(resArray[1][0]),(resArray[1][1],1865)],[(resArray[2][0]),(resArray[2][1],2942)],[(resArray[3][0]),(resArray[3][1],3846)]]);
+    updateGraph(myChartVehicle,[[(vehicleArray[0][0]),(vehicleArray[0][1],2159)],[(vehicleArray[1][0]),(vehicleArray[1][1],1888)],[(vehicleArray[2][0]),(vehicleArray[2][1],360)],[(vehicleArray[3][0]),(vehicleArray[3][1],315)],[(vehicleArray[4][0]),(vehicleArray[4][1],51)],[(vehicleArray[5][0]),(vehicleArray[5][1],45)]]); //Left side: Bike AM = 99, PM = 199, Car AM = 299, PM = 399, Bike AM - 499, PM = 599
+    updateText1(myChartPop,"Alternative");
+    updateText1(myChartSpace1, "Alternative");
+    updateText1(myChartVehicle, "Alternative");
+    resArray[0][1] = 4183; //change this as well as the value above (the one above sets the value temporarily. This replaces the value in the array.
+    resArray[1][1] = 1865;
     resArray[2][1] = 2942;
-    resArray[3][1] = 4088;
+    resArray[3][1] = 3846;
     // spaceArrayCurr1 = [121,60,130,340]
-    vehicleArray[0][1] = 1548;
-    vehicleArray[1][1] = 1452;
-    vehicleArray[2][1] = 258;
-    vehicleArray[3][1] = 242;
-    vehicleArray[4][1] = 37;
-    vehicleArray[5][1] = 34;
+    vehicleArray[0][1] = 2159;
+    vehicleArray[1][1] = 1888;
+    vehicleArray[2][1] = 360;
+    vehicleArray[3][1] = 315;
+    vehicleArray[4][1] = 51;
+    vehicleArray[5][1] = 45;
   }
   else {
     updateGraph(myChartSpace1,[[10,10,10,10]]);
@@ -658,7 +658,7 @@ const ctx = document.getElementById('ResPopulation').getContext('2d');
         },
         {
             label: 'Jobs',
-            data: [642, 60],
+            data: [2041, 60],
             backgroundColor: [
                 'rgba(173,216,164, 1)',
                 'rgba(173,216,164, 1)'
@@ -674,7 +674,7 @@ const ctx = document.getElementById('ResPopulation').getContext('2d');
         },
         {
             label: 'Parking',
-            data: [1295, 3547],
+            data: [1335, 3547],
             backgroundColor: [
                 'rgba(228,235,154, 1)',
                 'rgba(228,235,154, 1)'
@@ -731,7 +731,7 @@ const ctx1 = document.getElementById('SpaceUse').getContext('2d');
       labels: ['Child Care (sq. m)', 'Community (sq. m)', 'Greenspace (sq. m)', 'Library (sq. m)', 'Mechanical (sq. m)', 'Office (sq. m)', 'Residential (sq. m)', 'Retail (sq. m)', 'School (sq. m)', 'Services (sq. m)'],
       datasets: [{
           label: 'Parking',
-          data: [700,0,0,0,969,409899,0,4000,0,0],
+          data: [120,0,0,0,969,37638,0,1393,0,0],
           backgroundColor: [
             // 'rgba(250,173,97)',
             // 'rgba(192,174,213)',
@@ -938,7 +938,7 @@ const ctx2 = document.getElementById('VehicleTrips').getContext('2d');
         labels: [selectedTextL, selectedTextR],
         datasets: [{
             label: 'Car AM',
-            data: [1583,2679],
+            data: [1583,2249],
             backgroundColor: [
 
                 'rgba(253,223,138,1)',
@@ -954,7 +954,7 @@ const ctx2 = document.getElementById('VehicleTrips').getContext('2d');
         },
         {
             label: 'Car PM',
-            data: [1458,2957],
+            data: [1458,2254],
             backgroundColor: [
               'rgba(253,248,193,1)',
               'rgba(253,248,193,1)'
@@ -969,7 +969,7 @@ const ctx2 = document.getElementById('VehicleTrips').getContext('2d');
         },
         {
             label: 'Bus AM',
-            data: [72,446],
+            data: [72,375],
             backgroundColor: [
 
                 'rgba(243,109,68,1)',
@@ -985,7 +985,7 @@ const ctx2 = document.getElementById('VehicleTrips').getContext('2d');
         },
         {
             label: 'Bus PM',
-            data: [44,493],
+            data: [44,376],
             backgroundColor: [
               'rgba(250,173,97,1)',
               'rgba(250,173,97,1)'
@@ -1000,7 +1000,7 @@ const ctx2 = document.getElementById('VehicleTrips').getContext('2d');
         },
         {
             label: 'Bike AM',
-            data: [20,64],
+            data: [20,54],
             backgroundColor: [
 
                 'rgba(157,27,69,1)',
@@ -1016,7 +1016,7 @@ const ctx2 = document.getElementById('VehicleTrips').getContext('2d');
         },
         {
             label: 'Bike PM',
-            data: [42,71],
+            data: [42,54],
             backgroundColor: [
               'rgba(213,63,80,1)',
               'rgba(213,63,80,1)'
